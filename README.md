@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<Quiz on Official BTRC question bank>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
