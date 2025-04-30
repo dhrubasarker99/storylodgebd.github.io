@@ -1,0 +1,3124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Amateur Radio License Quiz Preview</title>
+  <script>
+    function checkAnswer(qIndex, selected) {
+      const correct = correctAnswers[qIndex];
+      const buttons = document.querySelectorAll(`#q${qIndex} .option`);
+      buttons.forEach(btn => {
+        btn.disabled = true;
+        if (btn.dataset.opt === correct) {
+          btn.style.backgroundColor = "#22c55e"; // green
+        } else if (btn.dataset.opt === selected) {
+          btn.style.backgroundColor = "#ef4444"; // red
+        }
+      });
+      document.getElementById(`next${qIndex}`).style.display = "block";
+    }
+
+    function showQuestion(index) {
+      const pages = document.querySelectorAll(".question-page");
+      pages.forEach((p, i) => p.style.display = i === index ? "block" : "none");
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      showQuestion(0);
+    });
+
+    const correctAnswers = ['b', 'a', 'd.', 'b', 'a', 'b', 'd', 'c', 'c', 'b', 'a', 'c', 'd', 'c', 'c', 'b', 'd', 'a', 'b', 'b', 'a', 'b', 'c', 'a', 'c', 'd', 'a', 'c', 'b', 'a', 'a', 'a', 'd', 'a', 'a', 'a', 'd', 'a', 'd', 'd', 'c', 'a', 'a', 'b', 'a', 'b', 'c', 'b', 'a.', 'b', 'b', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'c', 'a', 'c', 'd', 'a', 'b', 'a', 'a', 'a', 'b', 'd', 'c', 'a', 'b', 'b', 'a', 'd', 'd', 'a', 'b', 'b', 'c', 'd', 'd', 'b', 'b', 'd', 'c', 'c', 'a', 'a', 'd', 'a', 'c', 'c', 'd', 'c', 'b', 'b', 'a', 'c', 'c'];
+  </script>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+      margin: 0;
+      padding: 2rem;
+    }
+    .question-page {
+      display: none;
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    h2 {
+      color: #1d4ed8;
+    }
+    .option {
+      display: block;
+      margin: 0.5rem 0;
+      padding: 0.75rem;
+      background: #e0f2fe;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      text-align: left;
+      font-weight: bold;
+    }
+    .next-btn {
+      display: none;
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background: #3b82f6;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<style>
+  .animate-fade-in {
+    animation: fadeIn 0.4s ease-in-out;
+  }
+  @keyframes fadeIn {
+    from {opacity: 0; transform: translateY(10px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+</style>
+
+        <div class="question-page" id="q0">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1155. Amateur Radio Licenseeshall not</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(0, 'a')">
+              A) use
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(0, 'b')">
+              B) use / buy / import
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(0, 'c')">
+              C) buy
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(0, 'd')">
+              D) import
+            </button>
+            
+            <button id="next0" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(1)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q1">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1110. What property of radio waves is often used to identify the different frequency bands?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(1, 'a')">
+              A) The approximate wavelength
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(1, 'b')">
+              B) The magnetic intensity of waves
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(1, 'c')">
+              C) The time it takes for waves to travel one mile
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(1, 'd')">
+              D) The voltage standing wave ratio of waves
+            </button>
+            
+            <button id="next1" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(2)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q2">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1154. According to ‘Instructions for Amateur Radio Usages and Procedures in Bangladesh’ which of the</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(2, 'a')">
+              A) Date and time of each transmission
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(2, 'b')">
+              B) Frequency and mode of transmission.
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(2, 'c')">
+              C) A summary of communication exchanged
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(2, 'd')">
+              D) Educational qualification of the Licensee
+            </button>
+            
+            <button id="next2" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(3)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q3">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1108. 3: Which of the following frequencies has the lowest value for Maximum Permissible Exposure</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(3, 'a')">
+              A) 3.5 MHz
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(3, 'b')">
+              B) 50 MHz
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(3, 'c')">
+              C) 440 MHz
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(3, 'd')">
+              D) 1296 MHz
+            </button>
+            
+            <button id="next3" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(4)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q4">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1167. The noise in a radio receiver can be expressed as</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(4, 'a')">
+              A) S/N ratio
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(4, 'b')">
+              B) N/S ratio
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(4, 'c')">
+              C) Level of reference signal
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(4, 'd')">
+              D) None of these
+            </button>
+            
+            <button id="next4" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(5)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q5">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1147. In ‘Emission Designation’ of any radio equipment if Information Type = B then B stands for</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(5, 'a')">
+              A) aural telegraphy
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(5, 'b')">
+              B) telegraphy for machine copying (generally RTTY or high-speed Morse code)
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(5, 'c')">
+              C) analog fax
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(5, 'd')">
+              D) a single analog channel
+            </button>
+            
+            <button id="next5" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(6)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q6">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1098. Who may select a vanity call sign for a club station?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(6, 'a')">
+              A) Any Extra Class member of the club
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(6, 'b')">
+              B) Any member of the club
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(6, 'c')">
+              C) Any officer of the club
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(6, 'd')">
+              D) Only the person named as trustee on the club station license grant
+            </button>
+            
+            <button id="next6" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(7)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q7">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1143. What frequency range is referred to as HF?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(7, 'a')">
+              A) 300 to 3000 MHz
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(7, 'b')">
+              B) 30 to 300 MHz
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(7, 'c')">
+              C) 3 to 30 MHz
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(7, 'd')">
+              D) 300 to 3000 kHz
+            </button>
+            
+            <button id="next7" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(8)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q8">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1122. What is meant by the gain of an antenna?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(8, 'a')">
+              A) The additional power that is added to the transmitter power
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(8, 'b')">
+              B) The additional power that is lost in the antenna when transmitting on a higher frequency
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(8, 'c')">
+              C) The increase in signal strength in a specified direction when compared to a reference antenna
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(8, 'd')">
+              D) The increase in impedance on receive or transmit compared to a reference antenna
+            </button>
+            
+            <button id="next8" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(9)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q9">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1103. What could happen if a person accidentally touched your antenna while you were transmitting?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(9, 'a')">
+              A) Touching the antenna could cause television interference
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(9, 'b')">
+              B) They might receive a painful RF burn
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(9, 'c')">
+              C) They might develop radiation poisoning
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(9, 'd')">
+              D) All of these choices are correct
+            </button>
+            
+            <button id="next9" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(10)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q10">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1089. How does RF radiation differ from ionizing radiation (radioactivity)?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(10, 'a')">
+              A) RF radiation does not have sufficient energy to cause genetic damage
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(10, 'b')">
+              B) RF radiation can only be detected with an RF dosimeter
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(10, 'c')">
+              C) RF radiation is limited in range to a few feet
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(10, 'd')">
+              D) RF radiation is perfectly safe
+            </button>
+            
+            <button id="next10" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(11)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q11">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1137. What is the name for the distance a radio wave travels during one complete cycle?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(11, 'a')">
+              A) Wave speed
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(11, 'b')">
+              B) Waveform
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(11, 'c')">
+              C) Wavelength
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(11, 'd')">
+              D) Wave spread
+            </button>
+            
+            <button id="next11" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(12)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q12">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1145. In ‘Emission Designation’ of any radio equipment, if Modulated Signal= 8 then 8 stands for</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(12, 'a')">
+              A) amplitude modulation
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(12, 'b')">
+              B) A analog channel
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(12, 'c')">
+              C) No modulated signal
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(12, 'd')">
+              D) Two or more analog channels
+            </button>
+            
+            <button id="next12" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(13)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q13">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1184. For Bangladeshi Amateur Radio License Holder, the applicable call sign charges (for once) is :</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(13, 'a')">
+              A) 1000
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(13, 'b')">
+              B) 1500
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(13, 'c')">
+              C) 2500
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(13, 'd')">
+              D) 5000
+            </button>
+            
+            <button id="next13" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(14)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q14">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1138. What are the two components of a radio wave?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(14, 'a')">
+              A) AC and DC
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(14, 'b')">
+              B) Voltage and current
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(14, 'c')">
+              C) Electric and magnetic fields
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(14, 'd')">
+              D) Ionizing and non-ionizing radiation
+            </button>
+            
+            <button id="next14" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(15)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q15">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1158. bands are used for near-vertical-incidence-sky wave and low angle sky wave propagation for</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(15, 'a')">
+              A) LF
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(15, 'b')">
+              B) HF
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(15, 'c')">
+              C) UVF
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(15, 'd')">
+              D) Ku
+            </button>
+            
+            <button id="next15" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(16)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q16">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1095. Which of the following is a permissible use of the Amateur Radio Service?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(16, 'a')">
+              A) Broadcasting music and videos to friends
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(16, 'b')">
+              B) Providing a way for amateur radio operators to earn additional income by using their stations to pass messages
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(16, 'c')">
+              C) Providing low-cost communications for start-up businesses
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(16, 'd')">
+              D) Allowing a person to conduct radio experiments and to communicate with other licensed hams around the world
+            </button>
+            
+            <button id="next16" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(17)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q17">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1156. What is the Call Sign Series for Amateur Service in Bangladesh?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(17, 'a')">
+              A) S2A-S3Z
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(17, 'b')">
+              B) TAA-TCZ
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(17, 'c')">
+              C) GAA-GZZ
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(17, 'd')">
+              D) BAA-BZZ
+            </button>
+            
+            <button id="next17" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(18)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q18">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1161. The VHF frequency range that is authorized to Amateurs is</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(18, 'a')">
+              A) 140-146MHz
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(18, 'b')">
+              B) 144-146MHz
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(18, 'c')">
+              C) 140-144MHz
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(18, 'd')">
+              D) 142-146MHz
+            </button>
+            
+            <button id="next18" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(19)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q19">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1117. Which of the following devices or circuits changes an alternating current into a varying direct</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(19, 'a')">
+              A) Transformer
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(19, 'b')">
+              B) Rectifier
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(19, 'c')">
+              C) Amplifier
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(19, 'd')">
+              D) Reflector
+            </button>
+            
+            <button id="next19" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(20)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q20">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1115. What is the term that describes a transistor's ability to amplify a signal?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(20, 'a')">
+              A) Gain
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(20, 'b')">
+              B) Forward resistance
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(20, 'c')">
+              C) Forward voltage drop
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(20, 'd')">
+              D) On resistance
+            </button>
+            
+            <button id="next20" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(21)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q21">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1109. Which of the following results from the fact that skip signals refracted from the ionosphere are</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(21, 'a')">
+              A) Digital modes are unusable
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(21, 'b')">
+              B) Either vertically or horizontally polarized antennas may be used for transmission or reception
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(21, 'c')">
+              C) FM voice is unusable
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(21, 'd')">
+              D) Both the transmitting and receiving antennas must be of the same polarization
+            </button>
+            
+            <button id="next21" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(22)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q22">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1169. The characteristics of RST system stands for</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(22, 'a')">
+              A) Resistance, Signal and Test
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(22, 'b')">
+              B) Readability, Signal strength and Test
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(22, 'c')">
+              C) Readability, Signal strength and Tone
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(22, 'd')">
+              D) Resistance, Signal and Tone
+            </button>
+            
+            <button id="next22" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(23)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q23">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1176. Mike lives in Dhaka, but is away on holiday at a location with longitude of 28.9784°E. If the</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(23, 'a')">
+              A) 4 hours
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(23, 'b')">
+              B) hours
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(23, 'c')">
+              C) 7 hours
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(23, 'd')">
+              D) 5 hours
+            </button>
+            
+            <button id="next23" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(24)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q24">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1119. What do the initials LEO tell you about an amateur satellite?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(24, 'a')">
+              A) The satellite battery is in Low Energy Operation mode
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(24, 'b')">
+              B) The satellite is performing a Lunar Ejection Orbit maneuver
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(24, 'c')">
+              C) The satellite is in a Low Earth Orbit
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(24, 'd')">
+              D) The satellite uses Light Emitting Optics
+            </button>
+            
+            <button id="next24" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(25)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q25">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1125. Which of the following services are protected from interference by amateur signals under all</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(25, 'a')">
+              A) Citizens Radio Service
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(25, 'b')">
+              B) Broadcast Service
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(25, 'c')">
+              C) Land Mobile Radio Service
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(25, 'd')">
+              D) Radio navigation Service
+            </button>
+            
+            <button id="next25" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(26)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q26">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1152. According to ‘Instructions for Amateur Radio Usages and Procedures in Bangladesh’ maximum</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(26, 'a')">
+              A) 5 Watt
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(26, 'b')">
+              B) 4 Watt
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(26, 'c')">
+              C) 3 Watt
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(26, 'd')">
+              D) 2 Watt
+            </button>
+            
+            <button id="next26" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(27)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q27">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1123. Which of the following types of feed line has the lowest loss at VHF and UHF?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(27, 'a')">
+              A) 50-ohm flexible coax
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(27, 'b')">
+              B) Multi-conductor unbalanced cable
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(27, 'c')">
+              C) Air-insulated hard line
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(27, 'd')">
+              D) 75-ohm flexible coax
+            </button>
+            
+            <button id="next27" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(28)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q28">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1105. What is the impedance of the most commonly used coaxial cable in typical amateur radio</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(28, 'a')">
+              A) 8 ohms
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(28, 'b')">
+              B) 50 ohms
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(28, 'c')">
+              C) 600 ohms
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(28, 'd')">
+              D) 12 ohms
+            </button>
+            
+            <button id="next28" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(29)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q29">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1091. What do the letters FEC mean as they relate to digital operation?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(29, 'a')">
+              A) Forward Error Correction
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(29, 'b')">
+              B) First Error Correction
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(29, 'c')">
+              C) Fatal Error Correction
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(29, 'd')">
+              D) Final Error Correction
+            </button>
+            
+            <button id="next29" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(30)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q30">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1083. Who must designate the station control operator?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(30, 'a')">
+              A) The station licensee
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(30, 'b')">
+              B) The FCC
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(30, 'c')">
+              C) The frequency coordinator
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(30, 'd')">
+              D) The ITU
+            </button>
+            
+            <button id="next30" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(31)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q31">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1148. If ‘Emission Designation’ of any radio equipment is 12K5F3E, then the bandwidth on the air by</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(31, 'a')">
+              A) 12.5KHz
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(31, 'b')">
+              B) 125KHz
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(31, 'c')">
+              C) 1.25Hz
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(31, 'd')">
+              D) 5.3KHz;
+            </button>
+            
+            <button id="next31" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(32)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q32">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1102. Why do exposure limits vary with frequency?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(32, 'a')">
+              A) Lower frequency RF fields have more energy than higher frequency fields
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(32, 'b')">
+              B) Lower frequency RF fields do not penetrate the human body
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(32, 'c')">
+              C) Higher frequency RF fields are transient in nature
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(32, 'd')">
+              D) The human body absorbs more RF energy at some frequencies than at others
+            </button>
+            
+            <button id="next32" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(33)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q33">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1132. What happens when the deviation of an FM transmitter is increased?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(33, 'a')">
+              A) Its signal occupies more bandwidth
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(33, 'b')">
+              B) Its output power increases
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(33, 'c')">
+              C) Its output power and bandwidth increases
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(33, 'd')">
+              D) Asymmetric modulation occurs
+            </button>
+            
+            <button id="next33" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(34)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q34">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1174. In Region 3, 5 830–5 850MHz band is allotted for Amateur-satellite for</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(34, 'a')">
+              A) Earth-to-space
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(34, 'b')">
+              B) Space-to-earth
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(34, 'c')">
+              C) Both a & b
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(34, 'd')">
+              D) None of these
+            </button>
+            
+            <button id="next34" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(35)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q35">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1159. ,</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(35, 'a')">
+              A) VHF, UHF & SHF
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(35, 'b')">
+              B) HF, LHF and SHF
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(35, 'c')">
+              C) UHF, UVF and SHF
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(35, 'd')">
+              D) C, K & Ku
+            </button>
+            
+            <button id="next35" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(36)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q36">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1107. What is the minimum safe distance from a power line to allow when installing an antenna?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(36, 'a')">
+              A) Half the width of your property
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(36, 'b')">
+              B) The height of the power line above ground
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(36, 'c')">
+              C) 1/2 wavelength at the operating frequency
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(36, 'd')">
+              D) So that if the antenna falls unexpectedly, no part of it can come closer than 10 feet to the power wires
+            </button>
+            
+            <button id="next36" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(37)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q37">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1136. What type of wave carries radio signals between transmitting and receiving stations?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(37, 'a')">
+              A) Electromagnetic
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(37, 'b')">
+              B) Electrostatic
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(37, 'c')">
+              C) Surface acoustic
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(37, 'd')">
+              D) Magnetostrictive
+            </button>
+            
+            <button id="next37" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(38)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q38">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1177. The second last character in Class of Emission signifies about</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(38, 'a')">
+              A) Nature of signal(s) modulating the main carrier
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(38, 'b')">
+              B) Type of modulation of the main carrier
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(38, 'c')">
+              C) Type of information to be transmitted
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(38, 'd')">
+              D) Details of Information
+            </button>
+            
+            <button id="next38" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(39)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q39">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1106. Which of these precautions should be taken when installing devices for lightning protection in a</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(39, 'a')">
+              A) Include a parallel bypass switch for each protector so that it can be switched out of the circuit when running high power
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(39, 'b')">
+              B) Include a series switch in the ground line of each protector to prevent RF overload from inadvertently damaging the protector
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(39, 'c')">
+              C) Keep the ground wires from each protector separate and connected to station ground
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(39, 'd')">
+              D) Ground all of the protectors to a common plate which is in turn connected to an external ground
+            </button>
+            
+            <button id="next39" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(40)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q40">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1086. Which of the following is an acceptable language to use for station identification when operating</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(40, 'a')">
+              A) Any language recognized by the United Nations
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(40, 'b')">
+              B) Any language recognized by the ITU
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(40, 'c')">
+              C) The English language
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(40, 'd')">
+              D) English, French, or Spanish
+            </button>
+            
+            <button id="next40" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(41)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q41">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1096. What emission modes are permitted in the mode-restricted sub-bands at 50.0 to 50.1 MHz and</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(41, 'a')">
+              A) CW only
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(41, 'b')">
+              B) CW and RTTY
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(41, 'c')">
+              C) SSB only
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(41, 'd')">
+              D) CW and SSB
+            </button>
+            
+            <button id="next41" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(42)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q42">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1185. The station may be closed down by duly authorized officials of BTRC, -------- --.</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(42, 'a')">
+              A) at any time, without notice
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(42, 'b')">
+              B) at any time, prior notice required
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(42, 'c')">
+              C) by 3 months after giving notice.
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(42, 'd')">
+              D) None of the above.
+            </button>
+            
+            <button id="next42" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(43)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q43">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1080. In which of the following circumstances may the control operator of an amateur station receive</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(43, 'a')">
+              A) When engaging in communications on behalf of their employer
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(43, 'b')">
+              B) When the communication is incidental to classroom instruction at an educational institution
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(43, 'c')">
+              C) When re-broadcasting weather alerts during a RACES net
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(43, 'd')">
+              D) When notifying other amateur operators of the availability for sale or trade of apparatus
+            </button>
+            
+            <button id="next43" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(44)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q44">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1187. Bulb in street lighting are connected in</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(44, 'a')">
+              A) Parallel
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(44, 'b')">
+              B) Series Parallel
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(44, 'c')">
+              C) Series
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(44, 'd')">
+              D) End of end
+            </button>
+            
+            <button id="next44" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(45)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q45">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1082. Under which of the following circumstances may an amateur radio station engage in</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(45, 'a')">
+              A) Under no circumstances
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(45, 'b')">
+              B) When transmitting code practice, information bulletins, or transmissions necessaryto provide emergency communications
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(45, 'c')">
+              C) At any time as long as no music is transmitted
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(45, 'd')">
+              D) At any time as long as the material being transmitted did not originate from a commercial broadcast station
+            </button>
+            
+            <button id="next45" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(46)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q46">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1094. What information is traditionally contained in a station log?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(46, 'a')">
+              A) Date and time of contact
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(46, 'b')">
+              B) Band and/or frequency of the contact
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(46, 'c')">
+              C) Call sign of station contacted and the signal report given
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(46, 'd')">
+              D) All of these choices are correct
+            </button>
+            
+            <button id="next46" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(47)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q47">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1093. Which of the following are objectives of the Amateur Auxiliary?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(47, 'a')">
+              A) To conduct efficient and orderly amateur licensing examinations
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(47, 'b')">
+              B) To encourage self-regulation and compliance with the rules by radio amateur operators
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(47, 'c')">
+              C) To coordinate repeaters for efficient and orderly spectrum usage
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(47, 'd')">
+              D) To provide emergency and public safety communications
+            </button>
+            
+            <button id="next47" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(48)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q48">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1153. According to ‘Instructions for Amateur Radio Usages and Procedures in Bangladesh’ if anyone</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(48, 'a')">
+              A) shall have to take prior permission from the Commission by providing detailed technical information and related matters of those equipments.
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(48, 'b')">
+              B) shall have to notify Commission after manufacturing /assemblingthe equipment by providing detailed technical information and related matters of those equipments.
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(48, 'c')">
+              C) do not have to take permission or notify the Commission
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(48, 'd')">
+              D) Any of answer a or b
+            </button>
+            
+            <button id="next48" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(49)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q49">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1162. The transformer works on the principle of</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(49, 'a')">
+              A) Self Inductance
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(49, 'b')">
+              B) Mutual Inductance
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(49, 'c')">
+              C) Both a & b
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(49, 'd')">
+              D) None
+            </button>
+            
+            <button id="next49" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(50)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q50">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1126. Which of the following entities recommends transmit/receive channels and other parameters for</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(50, 'a')">
+              A) Frequency Spectrum Manager
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(50, 'b')">
+              B) Frequency Coordinator
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(50, 'c')">
+              C) FCC Regional Field Office
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(50, 'd')">
+              D) International Telecommunications Union
+            </button>
+            
+            <button id="next50" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(51)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q51">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1104. What does an antenna tuner do?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(51, 'a')">
+              A) It matches the antenna system impedance to the transceiver's output impedance
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(51, 'b')">
+              B) It helps a receiver automatically tune in weak stations
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(51, 'c')">
+              C) It allows an antenna to be used on both transmit and receive
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(51, 'd')">
+              D) It automatically selects the proper antenna for the frequency band being used
+            </button>
+            
+            <button id="next51" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(52)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q52">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1178. The abbreviation (in CW abbreviation) used for ‘Now , Resume transmission’</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(52, 'a')">
+              A) NW
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(52, 'b')">
+              B) NRT
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(52, 'c')">
+              C) NWR
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(52, 'd')">
+              D) NWT
+            </button>
+            
+            <button id="next52" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(53)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q53">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1151. According to ‘Instructions for Amateur Radio Usages and Procedures in Bangladesh’ maximum</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(53, 'a')">
+              A) 25 Watt
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(53, 'b')">
+              B) 30 Watt
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(53, 'c')">
+              C) 35 Watt
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(53, 'd')">
+              D) 40 Watt
+            </button>
+            
+            <button id="next53" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(54)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q54">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1186. What’s the value of pico, p ?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(54, 'a')">
+              A) 10-12
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(54, 'b')">
+              B) 10-9
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(54, 'c')">
+              C) 109
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(54, 'd')">
+              D) 10-10
+            </button>
+            
+            <button id="next54" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(55)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q55">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1120. What popular operating activity involves contacting as many stations as possible during a</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(55, 'a')">
+              A) Contesting
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(55, 'b')">
+              B) Net operations
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(55, 'c')">
+              C) Public service events
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(55, 'd')">
+              D) Simulated emergency exercises
+            </button>
+            
+            <button id="next55" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(56)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q56">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1173. Which of the following is the HF frequency range allotted for Amateur service?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(56, 'a')">
+              A) 24 890–24990KHz
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(56, 'b')">
+              B) 24 880–24 990KHz
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(56, 'c')">
+              C) 24 800–24990KHz
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(56, 'd')">
+              D) 24 890–24 995KHz
+            </button>
+            
+            <button id="next56" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(57)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q57">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1084. Under what type of control do APRS network digipeaters operate?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(57, 'a')">
+              A) Automatic
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(57, 'b')">
+              B) Remote
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(57, 'c')">
+              C) Local
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(57, 'd')">
+              D) Manual
+            </button>
+            
+            <button id="next57" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(58)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q58">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1118. Which of the following is a form of amplitude modulation?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(58, 'a')">
+              A) Spread-spectrum
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(58, 'b')">
+              B) Packet radio
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(58, 'c')">
+              C) Single sideband
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(58, 'd')">
+              D) Phase shift keying
+            </button>
+            
+            <button id="next58" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(59)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q59">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1090. What type of transmission is most often used for a ham radio mesh network?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(59, 'a')">
+              A) Spread spectrum in the 2.4 GHz band
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(59, 'b')">
+              B) Multiple Frequency Shift Keying in the 10 GHz band
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(59, 'c')">
+              C) Store and forward on the 440 MHz band
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(59, 'd')">
+              D) Frequency division multiplex in the 24 GHz band
+            </button>
+            
+            <button id="next59" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(60)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q60">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1087. What type of amateur station simultaneously retransmits the signal of another amateur station on</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(60, 'a')">
+              A) Beacon station
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(60, 'b')">
+              B) Earth station
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(60, 'c')">
+              C) Repeater station
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(60, 'd')">
+              D) Message forwarding station
+            </button>
+            
+            <button id="next60" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(61)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q61">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1114. What electrical component is usually composed of a coil of wire?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(61, 'a')">
+              A) Switch
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(61, 'b')">
+              B) Capacitor
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(61, 'c')">
+              C) Diode
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(61, 'd')">
+              D) Inductor
+            </button>
+            
+            <button id="next61" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(62)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q62">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1163. The Capacitor is a</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(62, 'a')">
+              A) Passive Device
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(62, 'b')">
+              B) Active Device
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(62, 'c')">
+              C) Both a & b
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(62, 'd')">
+              D) None
+            </button>
+            
+            <button id="next62" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(63)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q63">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1128. Which frequency is within the 6 meter band?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(63, 'a')">
+              A) 49.00 MHz
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(63, 'b')">
+              B) 52.525 MHz
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(63, 'c')">
+              C) 28.50 MHz
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(63, 'd')">
+              D) 222.15 MHz
+            </button>
+            
+            <button id="next63" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(64)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q64">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1144. The ‘Emission Designation’ of a radio equipment is 2K80J3EGN. Here J is</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(64, 'a')">
+              A) Modulation Type
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(64, 'b')">
+              B) Modulation Signal
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(64, 'c')">
+              C) Information Type
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(64, 'd')">
+              D) Multiplexing
+            </button>
+            
+            <button id="next64" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(65)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q65">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1150. According to ‘Instructions for Amateur Radio Usages and Procedures in Bangladesh’ one Amateur</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(65, 'a')">
+              A) 01 HF Radio set + 01 VHF Radio set + 01 UHF / VHF walkie-talkie set
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(65, 'b')">
+              B) 02 HF Radio set + 03 VHF Radio set + 01 UHF / VHF walkie-talkie set
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(65, 'c')">
+              C) 01 VHF Radio set + 01 UHF / VHF walkie-talkie set
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(65, 'd')">
+              D) 01 HF Radio set + 01 VHF Radio set
+            </button>
+            
+            <button id="next65" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(66)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q66">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1134. What is the Amateur Radio Emergency Service (ARES)?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(66, 'a')">
+              A) Licensed amateurs who have voluntarily registered their qualifications and equipment for communications duty in the public service
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(66, 'b')">
+              B) Licensed amateurs who are members of the military and who voluntarily agreed to provide message handling services in the case of an emergency
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(66, 'c')">
+              C) A training program that provides licensing courses for those interested in obtaining an amateur license to use during emergencies
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(66, 'd')">
+              D) A training program that certifies amateur operators for membership in the Radio Amateur Civil Emergency Service
+            </button>
+            
+            <button id="next66" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(67)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q67">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1135. Why are UHF signals often more effective from inside buildings than VHF signals?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(67, 'a')">
+              A) VHF signals lose power faster over distance
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(67, 'b')">
+              B) The shorter wavelength allows them to more easily penetrate the structure of buildings
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(67, 'c')">
+              C) This is incorrect; VHF works better than UHF inside buildings
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(67, 'd')">
+              D) UHF antennas are more efficient than VHF antennas
+            </button>
+            
+            <button id="next67" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(68)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q68">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1172. Which of the following is the HF frequency range allotted for Amateur service?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(68, 'a')">
+              A) 28-28.4MHz
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(68, 'b')">
+              B) 28-28.7MHz
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(68, 'c')">
+              C) 28-29.4MHz
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(68, 'd')">
+              D) 28-29.7MHz
+            </button>
+            
+            <button id="next68" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(69)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q69">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1149. Amateur Satellites are orbiting in</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(69, 'a')">
+              A) LEO, HEO & GEO
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(69, 'b')">
+              B) LEO & GEO
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(69, 'c')">
+              C) LEO & HEO
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(69, 'd')">
+              D) GEO & HEO
+            </button>
+            
+            <button id="next69" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(70)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q70">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1112. Where must a filter be installed to reduce harmonic emissions from your station?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(70, 'a')">
+              A) Between the transmitter and the antenna
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(70, 'b')">
+              B) Between the receiver and the transmitter
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(70, 'c')">
+              C) At the station power supply
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(70, 'd')">
+              D) At the microphone
+            </button>
+            
+            <button id="next70" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(71)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q71">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1160. Amateur satellites afford an opportunity to use frequencies above</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(71, 'a')">
+              A) LF
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(71, 'b')">
+              B) HF
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(71, 'c')">
+              C) UVF
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(71, 'd')">
+              D) Ku
+            </button>
+            
+            <button id="next71" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(72)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q72">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1113. What does the term RIT mean?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(72, 'a')">
+              A) Receiver Input Tone
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(72, 'b')">
+              B) Receiver Incremental Tuning
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(72, 'c')">
+              C) Rectifier Inverter Test
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(72, 'd')">
+              D) Remote Input Transmitter
+            </button>
+            
+            <button id="next72" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(73)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q73">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1130. When are you allowed to operate your amateur station in a foreign country?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(73, 'a')">
+              A) When the foreign country authorizes it
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(73, 'b')">
+              B) When there is a mutual agreement allowing third party communications
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(73, 'c')">
+              C) When authorization permits amateur communications in a foreign language
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(73, 'd')">
+              D) When you are communicating with non-licensed individuals in another country
+            </button>
+            
+            <button id="next73" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(74)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q74">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1099. What is the minimum safe distance from a power line to allow when installing an antenna?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(74, 'a')">
+              A) Half the width of your property
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(74, 'b')">
+              B) The height of the power line above ground
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(74, 'c')">
+              C) 1/2 wavelength at the operating frequency
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(74, 'd')">
+              D) So that if the antenna falls unexpectedly, no part of it can come closer than 10 feet to the power wires
+            </button>
+            
+            <button id="next74" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(75)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q75">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1133. What is the preamble in a formal traffic message?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(75, 'a')">
+              A) The first paragraph of the message text
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(75, 'b')">
+              B) The message number
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(75, 'c')">
+              C) The priority handling indicator for the message
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(75, 'd')">
+              D) The information needed to track the message as it passes through the amateur radio traffic handling system
+            </button>
+            
+            <button id="next75" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(76)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q76">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1168. The ‘Skip Distance’ is the distance between</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(76, 'a')">
+              A) Transmitter and Receiver
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(76, 'b')">
+              B) Transmitter and Ionospheric Layer
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(76, 'c')">
+              C) Receiver and Ionospheric Layer
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(76, 'd')">
+              D) Between two Ionospheric Layer
+            </button>
+            
+            <button id="next76" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(77)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q77">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1183. The licensee may transmit a message that is to be transmitted on behalf of a third party only in the</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(77, 'a')">
+              A) National event
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(77, 'b')">
+              B) Natural disaster
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(77, 'c')">
+              C) World amateur radio day
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(77, 'd')">
+              D) All of the above
+            </button>
+            
+            <button id="next77" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(78)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q78">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1166. The Impedance of a resonant circuit is</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(78, 'a')">
+              A) Zero
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(78, 'b')">
+              B) Equal to resistance
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(78, 'c')">
+              C) Unity
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(78, 'd')">
+              D) Equal to reactance
+            </button>
+            
+            <button id="next78" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(79)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q79">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1085. What type of control is being used when the control operator is at the control point?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(79, 'a')">
+              A) Radio control
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(79, 'b')">
+              B) Unattended control
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(79, 'c')">
+              C) Automatic control
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(79, 'd')">
+              D) Local control
+            </button>
+            
+            <button id="next79" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(80)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q80">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1121. What is PSK31?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(80, 'a')">
+              A) A high-rate data transmission mode
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(80, 'b')">
+              B) A method of reducing noise interference to FM signals
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(80, 'c')">
+              C) A method of compressing digital television signals
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(80, 'd')">
+              D) A low-rate data transmission mode
+            </button>
+            
+            <button id="next80" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(81)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q81">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1092. What does the Q signal "QRV" mean?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(81, 'a')">
+              A) You are sending too fast
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(81, 'b')">
+              B) There is interference on the frequency
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(81, 'c')">
+              C) I am quitting for the day
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(81, 'd')">
+              D) I am ready to receive messages
+            </button>
+            
+            <button id="next81" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(82)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q82">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1127. What is the ITU?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(82, 'a')">
+              A) An agency of the United States Department of Telecommunications Management
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(82, 'b')">
+              B) A United Nations agency for information and communication technology issues
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(82, 'c')">
+              C) An independent frequency coordination agency
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(82, 'd')">
+              D) A department of the UNO
+            </button>
+            
+            <button id="next82" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(83)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q83">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1164. The resistance value of an Insulator is</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(83, 'a')">
+              A) Zero
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(83, 'b')">
+              B) Very High
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(83, 'c')">
+              C) Less than Unity
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(83, 'd')">
+              D) None
+            </button>
+            
+            <button id="next83" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(84)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q84">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1124. Which agency regulates and enforces the rules for the Amateur Radio Service in the Bangladesh?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(84, 'a')">
+              A) BNRC
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(84, 'b')">
+              B) Secretary
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(84, 'c')">
+              C) BCC
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(84, 'd')">
+              D) BTRC
+            </button>
+            
+            <button id="next84" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(85)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q85">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1142. What frequency range is referred to as HF?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(85, 'a')">
+              A) 300 to 3000 MHz
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(85, 'b')">
+              B) 30 to 300 MHz
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(85, 'c')">
+              C) 3 to 30 MHz
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(85, 'd')">
+              D) 300 to 3000 kHz
+            </button>
+            
+            <button id="next85" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(86)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q86">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1081. When may an amateur station transmit without identifying?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(86, 'a')">
+              A) When the transmissions are of a brief nature to make station adjustments
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(86, 'b')">
+              B) When the transmissions are unmodulated
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(86, 'c')">
+              C) When the transmitted power level is below 1 watt
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(86, 'd')">
+              D) When transmitting signals to control a model craft
+            </button>
+            
+            <button id="next86" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(87)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q87">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1111. What is the radio horizon?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(87, 'a')">
+              A) The distance over which two stations can communicate by direct path
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(87, 'b')">
+              B) The distance from the ground to a horizontally mounted antenna
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(87, 'c')">
+              C) The farthest point you can see when standing at the base of your antenna tower
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(87, 'd')">
+              D) The shortest distance between two points on the Earth's surface
+            </button>
+            
+            <button id="next87" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(88)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q88">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1157. and bands typically use ground wave propagation and sky wave propagation over medium</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(88, 'a')">
+              A) LF & MF
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(88, 'b')">
+              B) HF & LF
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(88, 'c')">
+              C) UHF & UVF
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(88, 'd')">
+              D) C and Ku
+            </button>
+            
+            <button id="next88" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(89)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q89">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1141. What are the frequency limits of the UHF spectrum?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(89, 'a')">
+              A) 30 to 300 kHz
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(89, 'b')">
+              B) 30 to 300 MHz
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(89, 'c')">
+              C) 300 to 3000 kHz
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(89, 'd')">
+              D) 300 to 3000 MHz
+            </button>
+            
+            <button id="next89" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(90)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q90">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1139. How fast does a radio wave travel through free space?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(90, 'a')">
+              A) At the speed of light
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(90, 'b')">
+              B) At the speed of sound
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(90, 'c')">
+              C) Its speed is inversely proportional to its wavelength
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(90, 'd')">
+              D) Its speed increases as the frequency increases
+            </button>
+            
+            <button id="next90" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(91)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q91">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1131. What type of amateur station simultaneously retransmits the signal of another amateur station on a</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(91, 'a')">
+              A) Beacon station
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(91, 'b')">
+              B) Earth station
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(91, 'c')">
+              C) Repeater station
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(91, 'd')">
+              D) Message forwarding station
+            </button>
+            
+            <button id="next91" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(92)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q92">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1097. Which type of call sign has a single letter in both its prefix and suffix?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(92, 'a')">
+              A) Vanity
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(92, 'b')">
+              B) Sequential
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(92, 'c')">
+              C) Special event
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(92, 'd')">
+              D) In-memoriam
+            </button>
+            
+            <button id="next92" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(93)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q93">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1116. What is component 3 in figure T3?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(93, 'a')">
+              A) Connector
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(93, 'b')">
+              B) Meter
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(93, 'c')">
+              C) Variable capacitor
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(93, 'd')">
+              D) Variable inductor
+            </button>
+            
+            <button id="next93" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(94)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q94">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1088. What is meant by the gain of an antenna?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(94, 'a')">
+              A) The additional power that is added to the transmitter power
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(94, 'b')">
+              B) The additional power that is lost in the antenna when transmitting on a higher frequency
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(94, 'c')">
+              C) The increase in signal strength in a specified direction when compared to a reference antenna
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(94, 'd')">
+              D) The increase in impedance on receive or transmit compared to a reference antenna
+            </button>
+            
+            <button id="next94" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(95)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q95">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1140. What are the frequency limits of the VHF spectrum?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(95, 'a')">
+              A) 30 to 300 kHz
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(95, 'b')">
+              B) 30 to 300 MHz
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(95, 'c')">
+              C) 300 to 3000 kHz
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(95, 'd')">
+              D) 300 to 3000 MHz
+            </button>
+            
+            <button id="next95" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(96)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q96">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1175. If you move towards West from the Prime Meridian then the time will</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(96, 'a')">
+              A) Increase
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(96, 'b')">
+              B) Decrease
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(96, 'c')">
+              C) Remain same
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(96, 'd')">
+              D) All of them
+            </button>
+            
+            <button id="next96" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(97)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q97">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1179. The abbreviation (in CW abbreviation) used for ‘Best Regards’</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(97, 'a')">
+              A) 73
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(97, 'b')">
+              B) 64
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(97, 'c')">
+              C) 65
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(97, 'd')">
+              D) BR
+            </button>
+            
+            <button id="next97" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(98)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q98">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1100. Which of the following is true concerning grounding conductors used for lightning protection?</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(98, 'a')">
+              A) Only non-insulated wire must be used
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(98, 'b')">
+              B) Wires must be carefully routed with precise right-angle bends
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(98, 'c')">
+              C) Sharp bends must be avoided
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(98, 'd')">
+              D) Common grounds must be avoided
+            </button>
+            
+            <button id="next98" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(99)">Next</button>
+          </div>
+        </div>
+        
+
+        <div class="question-page" id="q99">
+          <div class="bg-white p-6 rounded-2xl shadow-xl animate-fade-in">
+            <h1 id="quiz-title" class="text-xl font-bold text-center text-purple-700 mb-4">Amateur Radio License Quiz 1001–1100</h1>
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Q1182. How much yearly license charges are applicable for the foreign amateur license holder, in BDT.</h2>
+        
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="a" onclick="checkAnswer(99, 'a')">
+              A) 1000
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="b" onclick="checkAnswer(99, 'b')">
+              B) 1500
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="c" onclick="checkAnswer(99, 'c')">
+              C) 2500
+            </button>
+            
+            <button class="option w-full text-left px-4 py-3 mb-3 bg-blue-100 hover:bg-blue-200 font-semibold rounded-xl transition-all duration-200 ease-in-out"
+                    data-opt="d" onclick="checkAnswer(99, 'd')">
+              D) 5000
+            </button>
+            
+            <button id="next99" class="next-btn mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl transition" onclick="showQuestion(100)">Finish</button>
+          </div>
+        </div>
+        
+
+    <div class="question-page" id="score-page">
+      <div class="bg-white p-6 rounded-2xl shadow-xl text-center animate-fade-in">
+        <h2 class="text-3xl font-bold text-green-600 mb-4">Your Score</h2>
+        <p id="score-display" class="text-xl font-semibold text-blue-700"></p>
+      </div>
+    </div>
+    
+<script>
+  let score = 0;
+  function checkAnswer(qIndex, selected) {
+    const correct = correctAnswers[qIndex];
+    const buttons = document.querySelectorAll(`#q${qIndex} .option`);
+    buttons.forEach(btn => {
+      btn.disabled = true;
+      if (btn.dataset.opt === correct) {
+        btn.style.backgroundColor = "#22c55e"; // green
+      } else if (btn.dataset.opt === selected) {
+        btn.style.backgroundColor = "#ef4444"; // red
+      }
+    });
+    if (selected === correct) score++;
+    document.getElementById(`next${qIndex}`).style.display = "block";
+  }
+
+  function showQuestion(index) {
+    const pages = document.querySelectorAll(".question-page");
+    pages.forEach((p, i) => p.style.display = i === index ? "block" : "none");
+
+    if (index === pages.length - 1) {
+      document.getElementById("score-display").textContent = `You got ${score} out of ${correctAnswers.length} correct.`;
+    }
+  }
+</script>
+
+</body>
+</html>
