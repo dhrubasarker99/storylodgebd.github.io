@@ -1,0 +1,658 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amateur Radio Licensing Examination Quiz 2025</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .quiz-container {
+            max-width: 600px;
+            width: 100%;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: opacity 0.3s ease;
+        }
+        h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .question {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .options label {
+            display: block;
+            margin: 10px 0;
+            padding: 15px;
+            background: #f9f9f9;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .options label:hover {
+            background: #e0e0e0;
+        }
+        .options input[type="radio"] {
+            display: none;
+        }
+        .options .correct {
+            background: #d4edda;
+            border-color: #28a745;
+        }
+        .options .incorrect {
+            background: #f8d7da;
+            border-color: #dc3545;
+        }
+        .next-btn {
+            display: none;
+            margin: 20px auto;
+            padding: 12px 30px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s ease;
+        }
+        .next-btn:hover {
+            background: #0056b3;
+        }
+        .next-btn.visible {
+            display: block;
+        }
+        .result {
+            font-size: 20px;
+            color: #333;
+            margin-top: 20px;
+        }
+        .fade-out {
+            opacity: 0;
+        }
+        .fade-in {
+            opacity: 1;
+        }
+        .home-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: #6c757d;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background-color 0.3s ease;
+        }
+        .home-btn:hover {
+            background-color: #5a6268;
+        }
+
+    </style>
+    </head>
+<body>
+
+    <div class="quiz-container fade-in">
+        <a href="index.html" class="home-btn">← Back to Home</a>
+
+        <h1>Amateur Radio Licensing Examination Quiz 2025</h1>
+        <div class="question" id="question-text"></div>
+        <form id="quiz-form" class="options">
+            <label><input type="radio" name="answer" value="a"><span id="option-a"></span></label>
+            <label><input type="radio" name="answer" value="b"><span id="option-b"></span></label>
+            <label><input type="radio" name="answer" value="c"><span id="option-c"></span></label>
+            <label><input type="radio" name="answer" value="d"><span id="option-d"></span></label>
+        </form>
+        <button class="next-btn" id="next-btn">Next Question</button>
+        <div class="result" id="result-text"></div>
+    </div>
+
+
+    <script>
+        const quizData = [
+            {
+                question: "What is the maximum transmitting power an amateur station may use on 10.140 MHz for Intermediate class?",
+                options: { a: "100 watts PEP output", b: "1000 watts PEP output", c: "1500 watts PEP output", d: "2000 watts PEP output" },
+                correct: "c"
+            },
+            {
+                question: "What is a practical way to avoid harmful interference when calling CQ using Morse code or CW?",
+                options: { a: "Send the letter 'V' 12 times and then listen for a response", b: "Keep your CQ to less than 2 minutes in length", c: "Send 'QRL? de' followed by your callsign and listen", d: "Call CQ at low power first" },
+                correct: "c"
+            },
+            {
+                question: "What is the maximum symbol rate permitted for RTTY emissions transmitted on frequency bands below 28 MHz?",
+                options: { a: "56 kilobaud", b: "19.6 kilobaud", c: "1200 baud", d: "300 baud" },
+                correct: "d"
+            },
+            {
+                question: "Which of the following frequencies is within the General Class portion of the 15 meter band?",
+                options: { a: "14250 kHz", b: "18155 kHz", c: "21300 kHz", d: "24900 kHz" },
+                correct: "c"
+            },
+            {
+                question: "What is the recommended way to break into a conversation when using phone?",
+                options: { a: "Say 'QRZ' several times followed by your call sign", b: "Say your call sign during a break", c: "Say 'Break' 'Break' 'Break' and wait", d: "Say 'CQ' followed by the call sign" },
+                correct: "b"
+            },
+            {
+                question: "What is the maximum transmitting power a General class licensee may use when operating between 7025 and 7125 kHz?",
+                options: { a: "200 watts PEP output", b: "1500 watts PEP output", c: "1000 watts PEP output", d: "2000 watts PEP output" },
+                correct: "b"
+            },
+            {
+                question: "What is QRP operation?",
+                options: { a: "Remote Piloted Model control", b: "Low power transmit operation, typically about 5 watts", c: "Transmission using Quick Response Protocol", d: "Traffic Relay Procedure net operation" },
+                correct: "b"
+            },
+            {
+                question: "What minimum frequency separation between SSB signals should be allowed to minimize interference?",
+                options: { a: "Between 150 and 500 Hz", b: "Approximately 3 kHz", c: "Approximately 6 kHz", d: "Approximately 10 kHz" },
+                correct: "b"
+            },
+            {
+                question: "Which sideband is most commonly used for phone communications on the bands above 20 meters?",
+                options: { a: "Upper Sideband", b: "Lower Sideband", c: "Vestigial Sideband", d: "Double Sideband" },
+                correct: "a"
+            },
+            {
+                question: "What is the maximum symbol rate permitted for packet emission transmissions on the 2 meter band?",
+                options: { a: "300 baud", b: "1200 baud", c: "19.6 kilobaud", d: "56 kilobaud" },
+                correct: "c"
+            },
+            {
+                question: "What does the abbreviation 'RTTY' stand for?",
+                options: { a: "Returning To You", b: "Radio-Teletype", c: "A general call to all digital stations", d: "Repeater Transmission Type" },
+                correct: "b"
+            },
+            {
+                question: "Which of the following frequencies is within the General Class portion of the 20 meter phone band?",
+                options: { a: "14005 kHz", b: "14105 kHz", c: "14305 kHz", d: "14405 kHz" },
+                correct: "c"
+            },
+            {
+                question: "What is the maximum bandwidth permitted by BTRC rules for amateur radio stations when operating on USB frequencies in the 60-meter band?",
+                options: { a: "2.8 kHz", b: "5.6 kHz", c: "+/- 2.8 kHz", d: "3 kHz" },
+                correct: "a"
+            },
+            {
+                question: "What is the most useful type of map to use when orienting a directional HF antenna toward a distant station?",
+                options: { a: "Azimuthal projection", b: "Mercator projection", c: "Polar projection", d: "Stereographic projection" },
+                correct: "a"
+            },
+            {
+                question: "What minimum frequency separation between 170 Hz shift RTTY signals should be allowed to minimize interference?",
+                options: { a: "60 Hz", b: "250 to 500 Hz", c: "Approximately 3 kHz", d: "170 Hz" },
+                correct: "b"
+            },
+            {
+                question: "What kind of amateur station simultaneously retransmits the signals of other stations on another channel?",
+                options: { a: "Repeater Station", b: "Beacon Station", c: "Telecommand Station", d: "Relay Station" },
+                correct: "a"
+            },
+            {
+                question: "What is the standard repeater shifting in VHF band?",
+                options: { a: "5 MHz", b: "600 kHz", c: "1 MHz", d: "900 kHz" },
+                correct: "b"
+            },
+            {
+                question: "What should you do to comply with good amateur practice when choosing a frequency for radioteletype (RTTY) operation?",
+                options: { a: "Call CQ in Morse code", b: "Select a frequency in the upper end of the phone band", c: "Select a frequency in the lower end", d: "Follow generally accepted band plans" },
+                correct: "d"
+            },
+            {
+                question: "Which of the following statements is true of VOX operation?",
+                options: { a: "The received signal is more natural sounding", b: "VOX allows 'hands free' operation", c: "Frequency spectrum is conserved", d: "The duty cycle of the transmitter is reduced" },
+                correct: "b"
+            },
+            {
+                question: "What is the main difference between HF and VHF band?",
+                options: { a: "HF band means (3-30) MHz and VHF band means (30-300) MHz", b: "HF band means (30-300) MHz and VHF band means (3-30) MHz", c: "HF band means (300-3000) MHz", d: "HF band means (3-30) MHz and VHF band means (300-3000) MHz" },
+                correct: "a"
+            },
+            {
+                question: "What does the expression 'CQ DX' usually indicate?",
+                options: { a: "A general call for any station", b: "The caller is listening for a station in Germany", c: "The caller is looking for any station outside their own country", d: "This is a form of distress call" },
+                correct: "c"
+            },
+            {
+                question: "Which of the following is a permissible third-party communication during routine amateur radio operations?",
+                options: { a: "Permitting an unlicensed person to speak", b: "Sending a business message for a non-profit", c: "Sending a business message with no pecuniary interest", d: "Sending a message to a third party through a foreign station" },
+                correct: "d"
+            },
+            {
+                question: "Which mode is most commonly used for voice communications on the 17 and 12 meter bands?",
+                options: { a: "Upper Sideband", b: "Lower Sideband", c: "Vestigial Sideband", d: "Double Sideband" },
+                correct: "a"
+            },
+            {
+                question: "What is a major advantage of MFSK16 compared to other digital modes?",
+                options: { a: "It is much higher speed than RTTY", b: "It is much narrower bandwidth", c: "It has built-in error correction", d: "It offers good performance in weak signal environment" },
+                correct: "d"
+            },
+            {
+                question: "What is the maximum transmitting power a station with a General Class control operator may use on the 28 MHz band?",
+                options: { a: "100 watts PEP output", b: "1000 watts PEP output", c: "1500 watts PEP output", d: "2000 watts PEP output" },
+                correct: "c"
+            },
+            {
+                question: "What is the first thing you should do if you are communicating with another amateur station and hear a station in distress break in?",
+                options: { a: "Continue your communication", b: "Acknowledge the station in distress", c: "Change to a different frequency", d: "Immediately cease all transmissions" },
+                correct: "b"
+            },
+            {
+                question: "What is the standard bandwidth for narrow band FM transmission in VHF and UHF?",
+                options: { a: "20 kHz", b: "50 kHz", c: "12.5 kHz", d: "25 kHz" },
+                correct: "c"
+            },
+            {
+                question: "What minimum frequency separation between CW signals should be allowed to minimize interference?",
+                options: { a: "5 to 50 Hz", b: "150 to 500 Hz", c: "1 to 3 kHz", d: "3 to 6 kHz" },
+                correct: "b"
+            },
+            {
+                question: "Which of the following applies in the event of interference between a coordinated repeater and an uncoordinated repeater?",
+                options: { a: "The licensee of the non-coordinated repeater has primary responsibility", b: "The licensee of the coordinated repeater has primary responsibility", c: "Both share equal responsibility", d: "The frequency coordinator bears primary responsibility" },
+                correct: "a"
+            },
+            {
+                question: "Which emission mode must be used to obtain assistance during a disaster?",
+                options: { a: "Only SSB", b: "Only SSB and CW", c: "Any mode", d: "Only CW" },
+                correct: "c"
+            },
+            {
+                question: "What is a band plan?",
+                options: { a: "A voluntary guideline for band use", b: "A guideline from the BTRC", c: "A guideline from the ITU", d: "A plan devised by a club" },
+                correct: "a"
+            },
+            {
+                question: "What should you do if you notice increasing interference from other activity on a frequency you are using?",
+                options: { a: "Tell the interfering stations to change frequency", b: "Report the interference", c: "Move your contact to another frequency", d: "Turn on your amplifier" },
+                correct: "c"
+            },
+            {
+                question: "Which of the following is required by the BTRC rules when operating in HF band?",
+                options: { a: "Keep a record of the gain of your antenna", b: "Keep a log of date, time, frequency", c: "Keep a log of all third-party traffic", d: "Keep a log of the manufacturer of your equipment" },
+                correct: "c"
+            },
+            {
+                question: "What is the power limit for beacon stations in Intermediate class license?",
+                options: { a: "10 watts PEP output", b: "20 watts PEP output", c: "100 watts PEP output", d: "200 watts PEP output" },
+                correct: "c"
+            },
+            {
+                question: "Which of the following frequencies is in the General Class portion of the 40 meter band?",
+                options: { a: "7.150 MHz", b: "7.500 MHz", c: "40.200 MHz", d: "40.500 MHz" },
+                correct: "a"
+            },
+            {
+                question: "Which of the following conditions require an amateur radio station to take specific steps to avoid harmful interference to other users?",
+                options: { a: "When operating within one mile of a BTRC Monitoring Station", b: "When using a band where the amateur service is secondary", c: "When transmitting spread spectrum emissions", d: "All of these answers are correct" },
+                correct: "b"
+            },
+            {
+                question: "When is an amateur station prevented from using any means at its disposal to assist another station in distress?",
+                options: { a: "Only when transmitting in RACES", b: "Only when authorized by the BTRC rule", c: "Never", d: "Only on authorized HF frequencies" },
+                correct: "c"
+            },
+            {
+                question: "What language must you use when identifying your station if you are using a language other than English in making a contact?",
+                options: { a: "The language being used for the contact", b: "Any language if the US has a third-party agreement", c: "English", d: "Any language of a country that is a member of the ITU" },
+                correct: "c"
+            },
+            {
+                question: "Which of the following is an advantage when using single sideband as compared to other voice modes on the HF amateur bands?",
+                options: { a: "Very high fidelity voice modulation", b: "Less bandwidth used and high power efficiency", c: "Ease of tuning on receive", d: "Less subject to static crashes" },
+                correct: "b"
+            },
+            {
+                question: "What segment of the 80 meter band is most commonly used for data transmissions?",
+                options: { a: "3570-3600 kHz", b: "3500-3525 kHz", c: "3700-3750 kHz", d: "3775-3825 kHz" },
+                correct: "a"
+            },
+            {
+                question: "What should you do to comply with good amateur practice when choosing a frequency for Slow-Scan TV (SSTV) operation?",
+                options: { a: "Transmit only on lower sideband", b: "Transmit your callsign as an SSTV image", c: "Select a frequency in the digital operation band", d: "Follow generally accepted band plans" },
+                correct: "d"
+            },
+            {
+                question: "What is the maximum symbol rate permitted for RTTY or data emission transmissions on the 10 meter band?",
+                options: { a: "56 kilobaud", b: "19.6 kilobaud", c: "1200 baud", d: "300 baud" },
+                correct: "c"
+            },
+            {
+                question: "Which of the following frequencies is in the 12 meter band?",
+                options: { a: "24.940 MHz", b: "12.940 MHz", c: "17.940 MHz", d: "3.940 MHz" },
+                correct: "a"
+            },
+            {
+                question: "When normal communications systems are not available, what means may an amateur station use to provide essential communications?",
+                options: { a: "Only on internationally recognized emergency channels", b: "Only to RACES recognized emergency stations", c: "Any means of radio communication", d: "Only licensed means" },
+                correct: "c"
+            },
+            {
+                question: "What information is traditionally contained in a station log?",
+                options: { a: "Date and time of contact", b: "Band and/or frequency of the contact", c: "Call sign of station contacted", d: "All of these choices are correct" },
+                correct: "d"
+            },
+            {
+                question: "Which of the following is not correct practice for an Intermediate class license holder?",
+                options: { a: "Transmissions must only use Lower Sideband", b: "Transmissions must use only CW or Data modes", c: "Transmissions can exceed the power limitations", d: "Transmissions must not exceed operator needs" },
+                correct: "c"
+            },
+            {
+                question: "Which of the following operating restrictions applies to amateur radio stations as a secondary service in the 60 meter band?",
+                options: { a: "They must not cause harmful interference", b: "They must transmit no more than 30 minutes per hour", c: "They must use lower sideband only", d: "They must not exceed 2.0 kHz of bandwidth" },
+                correct: "a"
+            },
+            {
+                question: "What does the abbreviation 'MFSK' stand for?",
+                options: { a: "Manual Frequency Shift Keying", b: "Multi (or Multiple) Frequency Shift Keying", c: "Manual Frequency Sideband Keying", d: "Multi (or Multiple) Frequency Sideband Keying" },
+                correct: "b"
+            },
+            {
+                question: "Which mode should be selected when using an SSB transmitter with an Audio Frequency Shift Keying (AFSK) RTTY signal?",
+                options: { a: "USB", b: "DSB", c: "CW", d: "LSB" },
+                correct: "d"
+            },
+            {
+                question: "When may a 10 meter repeater retransmit the 2 meter signal from a station having an Intermediate Class control operator?",
+                options: { a: "Under no circumstances", b: "Only with Special Temporary Authorization", c: "Only during a BTRC-declared emergency", d: "Only if the 10 meter control operator holds General class" },
+                correct: "a"
+            },
+            {
+                question: "What is the standard repeater shifting in UHF band?",
+                options: { a: "600 kHz", b: "1 MHz", c: "5 MHz", d: "900 kHz" },
+                correct: "c"
+            },
+            {
+                question: "What frequencies may be used by an amateur station to obtain assistance when in distress?",
+                options: { a: "Only frequencies in the 80 meter band", b: "Only frequencies in the 40 meter band", c: "Any frequency authorized to the control operator", d: "Any United Nations approved frequency" },
+                correct: "c"
+            },
+            {
+                question: "Which of the following statements is true of single sideband (SSB) voice mode?",
+                options: { a: "It is a form of amplitude modulation with one sideband and carrier suppressed", b: "It is a form of frequency modulation", c: "It reproduces upper frequencies more efficiently", d: "It is the only voice mode authorized on HF" },
+                correct: "a"
+            },
+            {
+                question: "Why do many amateurs keep a log even though the BTRC doesn't require it?",
+                options: { a: "The ITU requires a log of international contacts", b: "The ITU requires a log of third-party traffic", c: "The log provides evidence for license renewal", d: "To help with BTRC requests for control operator information" },
+                correct: "d"
+            },
+            {
+                question: "Which of the following user adjustable controls are usually associated with VOX circuitry?",
+                options: { a: "Anti-VOX", b: "VOX Delay", c: "VOX Sensitivity", d: "All of these choices are correct" },
+                correct: "d"
+            },
+            {
+                question: "Which of the following would disqualify a third party from participating in stating a message over an amateur station?",
+                options: { a: "The third party is a person with a revoked amateur license", b: "The third party is not a Bangladeshi citizen", c: "The third party is a licensed amateur", d: "The third party speaks in a non-English language" },
+                correct: "a"
+            },
+            {
+                question: "Which of the following 20 meter band segments is most often used for most data transmissions?",
+                options: { a: "14.000-14.050 MHz", b: "14.070-14.100 MHz", c: "14.150-14.225 MHz", d: "14.275-14.350 MHz" },
+                correct: "b"
+            },
+            {
+                question: "What is the Amateur Auxiliary to the BTRC?",
+                options: { a: "Amateur volunteers monitoring for rules violations", b: "Amateur volunteers conducting licensing exams", c: "Amateur volunteers coordinating VHF repeaters", d: "Amateur volunteers aiding civil defense" },
+                correct: "a"
+            },
+            {
+                question: "Which sideband is commonly used in the VHF and UHF bands?",
+                options: { a: "Upper Sideband", b: "Lower Sideband", c: "Vestigial Sideband", d: "Double Sideband" },
+                correct: "a"
+            },
+            {
+                question: "What is the most common frequency shift for RTTY emissions in the amateur HF bands?",
+                options: { a: "85 Hz", b: "170 Hz", c: "425 Hz", d: "850 Hz" },
+                correct: "b"
+            },
+            {
+                question: "Which of the following frequencies is within the General Class portion of the 80 meter band?",
+                options: { a: "1855 kHz", b: "2560 kHz", c: "3560 kHz", d: "3650 kHz" },
+                correct: "c"
+            },
+            {
+                question: "What should be done if a net is about to begin on a frequency you and another station are using?",
+                options: { a: "Move to a different frequency", b: "Tell the net to move", c: "Reduce power", d: "Pause between transmissions" },
+                correct: "a"
+            },
+            {
+                question: "Which of the following is a purpose of a beacon station as identified in the Amateur Rules?",
+                options: { a: "Observation of propagation and reception", b: "Automatic Identification of Repeaters", c: "Transmission of bulletins", d: "Identifying Net Frequencies" },
+                correct: "a"
+            },
+            {
+                question: "Which mode of voice communication is most commonly used on the High Frequency Amateur bands?",
+                options: { a: "FM", b: "AM", c: "SSB", d: "PM" },
+                correct: "c"
+            },
+            {
+                question: "What is the maximum symbol rate permitted for RTTY or data emission transmissions on the 6 and 2 meter bands?",
+                options: { a: "56 kilobaud", b: "19.6 kilobaud", c: "1200 baud", d: "300 baud" },
+                correct: "b"
+            },
+            {
+                question: "When may the BTRC restrict normal frequency operations of amateur stations?",
+                options: { a: "When they declare a temporary state of communication emergency", b: "When they seize your equipment", c: "When all amateur stations are instructed to stop", d: "When the country goes under a WAR" },
+                correct: "a"
+            },
+            {
+                question: "What information should be given to a station answering a distress transmission?",
+                options: { a: "The ITU region and grid square locator", b: "The location and nature of the emergency", c: "The time of the emergency and weather", d: "The name of the emergency coordinator" },
+                correct: "b"
+            },
+            {
+                question: "What skills learned during Fox Hunts are of help to the Amateur Auxiliary?",
+                options: { a: "Identification of out of band operation", b: "Direction-finding skills", c: "Identification of different call signs", d: "Transmitting on non-amateur frequencies" },
+                correct: "b"
+            },
+            {
+                question: "Which of the following information must a licensee retain as part of their station records?",
+                options: { a: "The call sign of other amateurs operating your station", b: "Antenna gain calculations for 60 meters", c: "A record of all contacts with foreign stations", d: "A copy of all third-party messages" },
+                correct: "b"
+            },
+            {
+                question: "What is a practical way to avoid harmful interference when selecting a frequency to call CQ using phone?",
+                options: { a: "Ask if the frequency is in use", b: "Keep your CQ to less than 2 minutes", c: "Listen for 2 minutes before calling CQ", d: "Call CQ at low power first" },
+                correct: "a"
+            },
+            {
+                question: "Which HF antenna would be the best to use for minimizing interference?",
+                options: { a: "A bi-directional antenna", b: "An isotropic antenna", c: "A unidirectional antenna", d: "An omnidirectional antenna" },
+                correct: "c"
+            },
+            {
+                question: "Which of the following describes Baudot RTTY?",
+                options: { a: "7-bit code with start, stop, and parity bits", b: "Utilizes error detection and correction", c: "5-bit code with start and stop bits", d: "Two major operating modes are SELCAL and LISTEN" },
+                correct: "c"
+            },
+            {
+                question: "When may music be transmitted by an amateur station?",
+                options: { a: "At any time with no spurious emissions", b: "When unintentionally transmitted from the background", c: "On frequencies above 1215 MHz", d: "When part of a space shuttle or ISS retransmission" },
+                correct: "d"
+            },
+            {
+                question: "What type of transmissions may an amateur station make during a disaster?",
+                options: { a: "Only when RACES net is activated", b: "Transmissions to meet essential communications needs", c: "Only from an official emergency station", d: "Only one-way communications" },
+                correct: "b"
+            },
+            {
+                question: "What are the objectives of the Amateur Auxiliary?",
+                options: { a: "To conduct licensing examinations", b: "To encourage amateur self-regulation", c: "To coordinate repeaters", d: "To provide emergency communications" },
+                correct: "b"
+            },
+            {
+                question: "Where are PSK signals generally found on the 20 meter band?",
+                options: { a: "In the low end of the phone band", b: "In the high end of the phone band", c: "In the weak signal portion", d: "Around 14.070 MHz" },
+                correct: "d"
+            },
+            {
+                question: "What action should be taken if the frequency on which a net normally meets is in use just before the net begins?",
+                options: { a: "Reduce your output power", b: "Increase your power output", c: "Ask if the net may use the frequency or move", d: "Cancel the net for that day" },
+                correct: "c"
+            },
+            {
+                question: "Which of the following frequencies is available to a control operator holding a General Class license?",
+                options: { a: "28.020 MHz", b: "28.350 MHz", c: "28.550 MHz", d: "All of these answers are correct" },
+                correct: "d"
+            },
+            {
+                question: "What is the maximum transmitting power an amateur station may use on 1825 kHz for General class?",
+                options: { a: "200 watts PEP output", b: "1000 watts PEP output", c: "1200 watts PEP output", d: "1500 watts PEP output" },
+                correct: "d"
+            },
+            {
+                question: "When a General Class licensee is not permitted to use the entire voice portion of a particular band, which portion of the voice segment is generally available to them?",
+                options: { a: "The lower end", b: "The upper end", c: "The lower end below 7.3 MHz and upper end above 14.150 MHz", d: "The upper end below 7.3 MHz and lower end above 14.150 MHz" },
+                correct: "b"
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+        const questionText = document.getElementById('question-text');
+        const optionA = document.getElementById('option-a');
+        const optionB = document.getElementById('option-b');
+        const optionC = document.getElementById('option-c');
+        const optionD = document.getElementById('option-d');
+        const quizForm = document.getElementById('quiz-form');
+        const nextBtn = document.getElementById('next-btn');
+        const resultText = document.getElementById('result-text');
+        const quizContainer = document.querySelector('.quiz-container');
+
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        const shuffledQuizData = shuffle([...quizData]);
+
+        function loadQuestion() {
+            const currentQuestion = shuffledQuizData[currentQuestionIndex];
+            questionText.textContent = `Question ${currentQuestionIndex + 1}: ${currentQuestion.question}`;
+            optionA.textContent = currentQuestion.options.a;
+            optionB.textContent = currentQuestion.options.b;
+            optionC.textContent = currentQuestion.options.c;
+            optionD.textContent = currentQuestion.options.d;
+
+            quizForm.reset();
+            document.querySelectorAll('.options label').forEach(label => {
+                label.classList.remove('correct', 'incorrect');
+            });
+            document.querySelectorAll('input[name="answer"]').forEach(input => {
+                input.disabled = false;
+            });
+            nextBtn.classList.remove('visible');
+            resultText.textContent = '';
+        }
+
+        quizForm.addEventListener('change', (e) => {
+            if (e.target.name === 'answer') {
+                const selectedAnswer = e.target.value;
+                const currentQuestion = shuffledQuizData[currentQuestionIndex];
+
+                document.querySelectorAll('input[name="answer"]').forEach(input => {
+                    input.disabled = true;
+                });
+
+                document.querySelectorAll('.options label').forEach(label => {
+                    const input = label.querySelector('input');
+                    if (input.value === currentQuestion.correct) {
+                        label.classList.add('correct');
+                    } else if (input.value === selectedAnswer && selectedAnswer !== currentQuestion.correct) {
+                        label.classList.add('incorrect');
+                    }
+                });
+
+                if (selectedAnswer === currentQuestion.correct) {
+                    score++;
+                }
+
+                nextBtn.classList.add('visible');
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentQuestionIndex++;
+            quizContainer.classList.add('fade-out');
+
+            setTimeout(() => {
+                if (currentQuestionIndex < shuffledQuizData.length) {
+                    loadQuestion();
+                    quizContainer.classList.remove('fade-out');
+                    quizContainer.classList.add('fade-in');
+                } else {
+                    const percentage = ((score / shuffledQuizData.length) * 100).toFixed(2);
+                    quizContainer.innerHTML = `
+                        <h1>Quiz Completed!</h1>
+                        <div class="result">You scored ${score} out of ${shuffledQuizData.length} (${percentage}%)</div>
+                    `;
+                }
+            }, 300);
+        });
+
+        loadQuestion();
+    </script>
+</body>
+</html>
